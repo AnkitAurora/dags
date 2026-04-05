@@ -21,10 +21,10 @@ def aem_pipeline():
 
     @task
     def get_objects():
-        return {
-            "object_name": "public",
-            "object_name": "partner",
-        }
+        return [
+            {"object_name": "public"},
+            {"object_name": "partner"},
+        ]
 
     @task_group(group_id="process_object")
     def process_object(object_name):
